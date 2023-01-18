@@ -2,7 +2,7 @@ import { FormGroup } from '@angular/forms';
 
 export class MatchValidators {
   public static mustMatch(controlName: string, matchingControlName: string) {
-    return (formGroup: FormGroup) => {
+    const x = (formGroup: FormGroup) => {
       const control = formGroup.controls[controlName];
       const matchingControl = formGroup.controls[matchingControlName];
 
@@ -16,5 +16,6 @@ export class MatchValidators {
         matchingControl.setErrors(null);
       }
     }
+    return x;
   }
 }
